@@ -1,0 +1,9 @@
+# Включаем модуль перезаписи URL
+RewriteEngine On
+
+# Если файл или папка существуют — используем их
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Все остальные запросы перенаправляем на index.php
+RewriteRule ^(.*)$ index.php [QSA,L]
